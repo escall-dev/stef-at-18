@@ -2,45 +2,67 @@ import { motion } from 'framer-motion'
 
 export default function About() {
   return (
-    <section className="py-24 px-6 md:px-12 max-w-6xl mx-auto">
-      <div className="flex flex-col md:flex-row gap-12 items-center">
-        {/* Left column: Title & Divider */}
-        <motion.div 
+    <section className="py-24 px-6 md:px-16">
+      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12">
+
+        {/* Left: Title */}
+        <motion.div
           initial={{ opacity: 0, x: -30 }}
           whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={{ once: true, margin: '-100px' }}
           transition={{ duration: 0.8 }}
-          className="md:w-1/3 text-center md:text-left"
+          className="lg:w-[30%] shrink-0 pt-4"
         >
-          <h2 className="text-5xl md:text-6xl font-serif text-gray-900 mb-6 leading-tight">
-            A note from <span className="text-primary font-bold italic">Stef</span>&hellip;
+          <h2 className="text-5xl md:text-6xl font-serif text-gray-900 mb-6 leading-tight text-center lg:text-left">
+            A note from{' '}
+            <span className="text-primary font-bold italic underline">Stef</span>
+            &hellip;
           </h2>
-          <div className="w-24 h-[2px] bg-primary mx-auto md:mx-0"></div>
+          <div className="w-24 h-[2px] bg-primary mx-auto lg:mx-0" />
         </motion.div>
-        
-        {/* Right column: Bio / Message */}
-        <motion.div 
-          initial={{ opacity: 0, x: 30 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
+
+        {/* Center: Note Text */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-100px' }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="md:w-2/3"
+          className="lg:w-[35%] shrink-0 pt-4"
         >
-          <div className="prose prose-lg prose-rose">
-            <p className="text-gray-700 leading-relaxed font-sans font-light">
-              Welcome to my 18th birthday celebration site! I am so thrilled to invite you 
-              to share in this special milestone with me. As I step into this new chapter 
-              of my life, nothing would mean more than celebrating it surrounded by the 
-              people who have loved, supported, and guided me over the years.
-            </p>
-            <p className="text-gray-700 leading-relaxed font-sans font-light mt-4">
-              Get ready for a night of wonderful memories, great food, and endless dancing. 
-              Please review the details below and kindly RSVP so we can prepare for your 
-              arrival. I can't wait to see you there!
-            </p>
-          </div>
+          <p className="text-gray-900 leading-loose font-serif font-medium text-2xl text-justify mb-6">
+            Good evening everyone!
+          </p>
+          <p className="text-gray-900 leading-loose font-serif font-medium text-2xl text-justify mb-6">
+            Welcome to my 18th birthday celebration. Thank you all for being here today
+            and for taking the time to celebrate this special day with me.
+          </p>
+          <p className="text-gray-900 leading-loose font-serif font-medium text-2xl text-justify">
+            I hope you enjoy the food, the games, and the program we prepared. Thank you
+            for being part of this special chapter of my life. Thank you and have fun!
+          </p>
         </motion.div>
+
+        {/* Right: Image */}
+        <motion.div
+          initial={{ opacity: 0, x: 60 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, margin: '-100px' }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          className="lg:w-[35%] shrink-0 flex justify-center lg:justify-end"
+        >
+          <img
+            src="/stef.png"
+            alt="Stef"
+            className="h-[480px] lg:h-[580px] w-auto object-contain drop-shadow-2xl"
+          />
+        </motion.div>
+
       </div>
     </section>
   )
 }
+
+
+
+
+
